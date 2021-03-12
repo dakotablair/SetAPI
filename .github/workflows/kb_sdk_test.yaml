@@ -48,8 +48,8 @@ jobs:
       shell: bash
       env:
         KBASE_TEST_TOKEN: ${{ secrets.KBASE_CI_TOKEN }}
-        KBASE_ENDPOINT_ESCAPED: "https:\/\/ci.kbase.us\/services"
-        KBASE_AUTH_SERVICE_URL_ESCAPED: "https:\/\/ci.kbase.us\/services\/auth\/api\/legacy\/KBase\/Sessions\/Login"
+        KBASE_ENDPOINT_ESCAPED: ${{ 'https:\/\/ci.kbase.us\/services' }}
+        KBASE_AUTH_SERVICE_URL_ESCAPED: ${{ 'https:\/\/ci.kbase.us\/services\/auth\/api\/legacy\/KBase\/Sessions\/Login' }}
       run: |
         # Add token to config
         sed -ie "s/^test_token=.*$/&$KBASE_CI_TOKEN/g" ./test_local/test.cfg
